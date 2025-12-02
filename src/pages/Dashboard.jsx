@@ -354,7 +354,7 @@ function Dashboard() {
               <div className="absolute text-center">
                 <p className="text-xs text-slate-400">Total Expense</p>
                 <p className="text-lg font-semibold">
-                  ${totalExpense.toLocaleString()}
+                  $3,500
                 </p>
               </div>
             </div>
