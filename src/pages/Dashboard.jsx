@@ -89,25 +89,24 @@ function Dashboard() {
   const totalExpenseValue = expenseData.reduce((s, e) => s + e.value, 0);
 
   return (
-    <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-6 py-6">
-      <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2.2fr)_minmax(0,1fr)] gap-5">
+    <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
+      <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-2">
       
         <div className="space-y-4">
         
-          <div className="grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1.6fr)_repeat(3,minmax(0,1fr))] gap-2">
+          <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
     
-            <div className="bg-gradient-to-br from-emerald-900 to-emerald-700 text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
+            <div className="bg-gradient-to-br from-emerald-700 to-emerald-600 text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
+              <p className="mt-1 text-sm font-medium items-start">Andrew Forbist</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm uppercase text-emerald-50">
-                    Balance Amount
-                  </p>
-                  <p className="text-sm font-semibold mt-2">
+                  <p className="text-[10px] uppercase">Balance Amount</p>
+                  <p className="text-sm font-semibold">
                     ${totalBalance.toLocaleString()}
                   </p>
                 </div>
                 <div className="text-left text-xs text-emerald-200">
-                  <p className="mt-1 text-sm font-medium">Andrew Forbist</p>
+                  
                   <div className="mt-3 flex items-center gap-6">
                     <div>
                       <p className="uppercase tracking-wide text-[10px]">EXP</p>
@@ -389,6 +388,8 @@ function Dashboard() {
           <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
             <div className="flex items-center justify-between mb-2">
               <p className="font-semibold text-sm">Recent Activity</p>
+            </div>
+            <div className="flex  mb-2">
               <p className="text-xs text-slate-400 items-start">Today</p>
             </div>
 
@@ -409,6 +410,46 @@ function Dashboard() {
                   action: "added a new savings goal for vacation",
                   time: "02:05",
                 },
+                {
+                  name: "Taylor Green",
+                  action: "reviewed recent transactions",
+                  time: "03:15",
+                },
+              ].map((item) => (
+                <div key={item.name} className="flex items-start space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
+                    {item.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      }
+                  </div>
+                  <div className="flex w-full ">
+                    <p className="text-slate-700 ">
+                      <span className="font-medium font-semibold">{item.name}</span>
+                      <span className="font-medium">{" "}{item.action}</span>
+                    </p>
+                  </div>
+
+                  <div className=" items-start">
+                      <p className="text-[10px] text-slate-400">{item.time}</p>
+                    </div>
+                </div>
+              ))}
+            </div>
+
+              <br />
+            <div className="flex  mb-2">
+              <p className="text-xs text-slate-400 items-start">Yesterday</p>
+            </div>
+
+            <div className="space-y-5 text-xs">
+              {[
+                {
+                  name: "Wailson Smith",
+                  action: "updated account settings",
+                  time: "16:05",
+                },
+               
                 {
                   name: "Taylor Green",
                   action: "reviewed recent transactions",
