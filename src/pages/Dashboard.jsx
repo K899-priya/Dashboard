@@ -386,13 +386,13 @@ function Dashboard() {
           </div>
 
         
-          <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+          <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
             <div className="flex items-center justify-between mb-2">
               <p className="font-semibold text-sm">Recent Activity</p>
-              <p className="text-xs text-slate-400">Today</p>
+              <p className="text-xs text-slate-400 items-start">Today</p>
             </div>
 
-            <div className="space-y-3 text-xs">
+            <div className="space-y-5 text-xs">
               {[
                 {
                   name: "Jamie Smith",
@@ -412,23 +412,26 @@ function Dashboard() {
                 {
                   name: "Taylor Green",
                   action: "reviewed recent transactions",
-                  time: "Yesterday",
+                  time: "03:15",
                 },
               ].map((item) => (
-                <div key={item.name} className="flex items-start space-x-3">
+                <div key={item.name} className="flex items-start space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
                     {item.name
                       .split(" ")
                       .map((n) => n[0])
-                      .join("")}
+                      }
                   </div>
-                  <div className="flex justify-between w-full">
-                    <p className="text-slate-700 items-center">
-                      <span className="font-medium">{item.name}</span>
+                  <div className="flex w-full ">
+                    <p className="text-slate-700 ">
+                      <span className="font-medium font-semibold">{item.name}</span>
                       <span className="font-medium">{" "}{item.action}</span>
                     </p>
-                    <p className="text-[10px] text-slate-400">{item.time}</p>
                   </div>
+
+                  <div className=" items-start">
+                      <p className="text-[10px] text-slate-400">{item.time}</p>
+                    </div>
                 </div>
               ))}
             </div>
