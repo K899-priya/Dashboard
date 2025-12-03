@@ -1,5 +1,6 @@
 import React from "react";
 import { FiSearch, FiBell, } from "react-icons/fi";
+import { IoChatbubbleEllipses } from "react-icons/io5";
 
 function TopBar() {
   return (
@@ -17,8 +18,8 @@ function TopBar() {
           />
         </div>
 
-        <button className="relative w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
-          
+        <button className="relative w-10 h-10 rounded-full bg-slate-100 flex items-center justify-between">
+          <IoChatbubbleEllipses />
           <FiBell className="text-slate-600" />
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[10px] text-white flex items-center justify-center">
             3
@@ -29,8 +30,8 @@ function TopBar() {
           <div className="hidden sm:block">
             <p className="text-sm font-semibold">Andrew Forbist</p>
           </div>
-          <div className="w-10 h-10 rounded-full bg-emerald-300 flex items-center justify-center text-emerald-900 font-semibold">
-            A
+          <div className="w-6 h-10 rounded-covered flex items-center justify-center  ">
+            <img src="/public/kimg.jpg" alt="profile" />
           </div>
           
         </div>

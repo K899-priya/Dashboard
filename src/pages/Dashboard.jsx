@@ -1,5 +1,9 @@
 import React from "react";
 import { Fa500Px } from "react-icons/fa";
+import { GiWallet } from "react-icons/gi";
+import { RiExchangeDollarFill } from "react-icons/ri"
+import { BsSoundwave } from "react-icons/bs";
+import { CiMenuKebab } from "react-icons/ci";
 import {
   BarChart,
   Bar,
@@ -95,8 +99,11 @@ function Dashboard() {
         <div className="space-y-4">
           <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
             <div className="bg-gradient-to-br text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
+              <div className="flex justify-between">
               <Fa500Px />
-              <p className="mt-4 text-sm font-medium">
+              <BsSoundwave />
+              </div>
+              <p className="mt-3 text-lg font-medium">
                 Andrew Forbist
               </p>
               <div className="flex items-center justify-between">
@@ -122,6 +129,10 @@ function Dashboard() {
             </div>
 
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+              <div className="flex justify-between">
+              <RiExchangeDollarFill />
+              <CiMenuKebab />
+              </div>
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
                 +13.2%
               </span>
@@ -132,6 +143,10 @@ function Dashboard() {
             </div>
 
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+              <div className="flex justify-between">
+              <RiExchangeDollarFill />
+              <CiMenuKebab />
+              </div>
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-rose-50 text-rose-600 text-[11px] font-medium">
                 -8.1%
               </span>
@@ -142,6 +157,10 @@ function Dashboard() {
             </div>
 
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+              <div className="flex justify-between">
+               <GiWallet />
+              <CiMenuKebab />
+              </div>
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
                 +12.4%
               </span>

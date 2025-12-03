@@ -31,8 +31,8 @@ function Sidebar() {
   return (
     <aside className="w-52 bg-green-50 border-r border-green-50 hidden lg:flex flex-col">
       <div className="h-20 flex items-center px-6 border-b border-emerald-100">
-        <div className="w-10 h-10 flex items-center justify-center text-white font-bold">
-          <Fa500Px />
+        <div className="flex items-center justify-center text-white font-bold">
+          <Fa500Px size={25}/>
         </div>
         <div className="ml-3">
           <p className="font-semibold text-emerald-900">COINEST</p>
