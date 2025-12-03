@@ -94,12 +94,12 @@ function Dashboard() {
         <div className="space-y-4">
           <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
             <div className="bg-gradient-to-br from-emerald-700 to-emerald-600 text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
-              <p className="mt-1 text-sm font-medium items-start">
+              <p className="mt-4 text-sm font-medium items-start">
                 Andrew Forbist
               </p>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[10px] uppercase">Balance Amount</p>
+                  <p className="text-[9px] uppercase">Balance Amount</p>
                   <p className="text-sm font-semibold">
                     ${totalBalance.toLocaleString()}
                   </p>
