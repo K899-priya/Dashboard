@@ -1,11 +1,12 @@
 import React from "react";
 import { Fa500Px } from "react-icons/fa";
 import { GiWallet } from "react-icons/gi";
-import { RiExchangeDollarFill } from "react-icons/ri"
+import { RiExchangeDollarFill } from "react-icons/ri";
 import { BsSoundwave } from "react-icons/bs";
 import { CiMenuKebab } from "react-icons/ci";
 import { IoWarning, IoHome } from "react-icons/io5";
 import { MdFlight } from "react-icons/md";
+import { IoMdTrendingUp, IoMdTrendingDown } from "react-icons/io";
 import {
   BarChart,
   Bar,
@@ -99,15 +100,13 @@ function Dashboard() {
     <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
       <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-2">
         <div className="space-y-4">
-          <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
-            <div className="bg-gradient-to-br text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
+          <div className="grid xl:grid-cols-[220px_repeat(3,1fr)] gap-2 items-start">
+            <div className="bg-emerald-50 text-emerald-50 rounded-2xl text-start p-5 flex flex-col shadow-sm">
               <div className="flex justify-between">
-              <Fa500Px />
-              <BsSoundwave />
+                <Fa500Px />
+                <BsSoundwave />
               </div>
-              <p className="mt-3 text-lg font-medium">
-                Andrew Forbist
-              </p>
+              <p className="mt-3 text-lg font-medium">Andrew Forbist</p>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[9px] uppercase">Balance Amount</p>
@@ -130,57 +129,58 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div className="bg-white rounded-2xl p-4 text-start shadow-sm border border-slate-100">
               <div className="flex justify-between">
-              <RiExchangeDollarFill />
-              <CiMenuKebab />
+                <RiExchangeDollarFill />
+                <CiMenuKebab />
               </div>
-              <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
-                +13.2%
+              <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium ">
+                 <IoMdTrendingUp className="size:{16} "/>+174%
               </span>
-              <p className="text-2xl font-semibold">
+              <p className="text-xl font-semibold">
                 ${totalIncome.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 mb-1">Total Income</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
               <div className="flex justify-between">
-              <RiExchangeDollarFill />
-              <CiMenuKebab />
+                <RiExchangeDollarFill />
+                <CiMenuKebab />
               </div>
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-rose-50 text-rose-600 text-[11px] font-medium">
-                -8.1%
+                <IoMdTrendingDown className="size:{16}"/>-174%
               </span>
-              <p className="text-2xl font-semibold">
+              <p className="text-xl font-semibold">
                 ${totalExpense.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 mb-1">Total Expense</p>
             </div>
 
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
               <div className="flex justify-between">
-               <GiWallet />
-              <CiMenuKebab />
+                <GiWallet />
+                <CiMenuKebab />
               </div>
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
-                +12.4%
+                <IoMdTrendingUp className="size:{16}"/>+124%
               </span>
-              <p className="text-2xl font-semibold">
+              <p className="text-xl font-semibold">
                 ${totalSaving.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 mb-1">Total Savings</p>
             </div>
           </div>
 
-          <div className="grid grid-rows-[1fr,minmax(0,1fr)] gap-2">
+          <div className=" grid grid-rows-[260px,minmax(0,1fr)] gap-2">
             <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
               <div className="flex items-center justify-between mb-4">
                 <p className="font-semibold text-sm">Daily Limit</p>
+                <CiMenuKebab />
               </div>
               <div className="flex items-center justify-between mb-4">
                 <p className="text-xs text-slate-500 mb-3">
-                  $2,500.00 spent of $20,000.00
+                  <b>$2,500.00</b> spent of $20,000.00
                 </p>
                 <p className="text-xs text-slate-400">12.5%</p>
               </div>
@@ -224,12 +224,12 @@ function Dashboard() {
                 ].map((plan) => (
                   <div
                     key={plan.name}
-                    className="border border-slate-100 rounded-2xl p-2 bg-slate-40/30"
+                    className="border border-slate-100 rounded-2xl p-2 "
                   >
                     <div className="flex  justify-between mb-2">
                       <div className="flex justify-between items-center">
-                      <p className="">{plan.icon}</p>
-                      <p className="text-sm font-medium">{plan.name}</p>
+                        <p className="">{plan.icon}</p>
+                        <p className="text-sm font-medium">{plan.name}</p>
                       </div>
                       <p className="text-xs text-slate-400">
                         Target: ${plan.target.toLocaleString()}
@@ -255,7 +255,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-[minmax(0,1.3fr),minmax(0,1.7fr)] gap-4">
+          <div className="grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.7fr)] gap-4">
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <div>
