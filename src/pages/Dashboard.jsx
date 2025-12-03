@@ -91,13 +91,12 @@ function Dashboard() {
   return (
     <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
       <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-2">
-      
         <div className="space-y-4">
-        
           <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
-    
             <div className="bg-gradient-to-br from-emerald-700 to-emerald-600 text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
-              <p className="mt-1 text-sm font-medium items-start">Andrew Forbist</p>
+              <p className="mt-1 text-sm font-medium items-start">
+                Andrew Forbist
+              </p>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[10px] uppercase">Balance Amount</p>
@@ -106,7 +105,6 @@ function Dashboard() {
                   </p>
                 </div>
                 <div className="text-left text-xs text-emerald-200">
-                  
                   <div className="mt-3 flex items-center gap-6">
                     <div>
                       <p className="uppercase tracking-wide text-[10px]">EXP</p>
@@ -121,7 +119,6 @@ function Dashboard() {
               </div>
             </div>
 
-          
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
                 +13.2%
@@ -146,7 +143,7 @@ function Dashboard() {
               <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
                 +12.4%
               </span>
-               <p className="text-2xl font-semibold">
+              <p className="text-2xl font-semibold">
                 ${totalSaving.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 mb-1">Total Savings</p>
@@ -159,16 +156,17 @@ function Dashboard() {
                 <p className="font-semibold text-sm">Daily Limit</p>
               </div>
               <div className="flex items-center justify-between mb-4">
-                <p className="text-xs text-slate-500 mb-3">$2,500.00 spent of $20,000.00</p>
+                <p className="text-xs text-slate-500 mb-3">
+                  $2,500.00 spent of $20,000.00
+                </p>
                 <p className="text-xs text-slate-400">12.5%</p>
               </div>
-              
+
               <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
                 <div className="h-full w-1/6 bg-emerald-500 rounded-full" />
               </div>
             </div>
 
-  
             <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
               <div className="flex items-center justify-between mb-4">
                 <p className="font-semibold text-sm">Saving Plans</p>
@@ -229,7 +227,6 @@ function Dashboard() {
           </div>
 
           <div className="grid lg:grid-cols-[minmax(0,1.3fr),minmax(0,1.7fr)] gap-4">
-            
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <div>
@@ -268,7 +265,6 @@ function Dashboard() {
               </div>
             </div>
 
-            
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
               <div className="flex items-center justify-between mb-4">
                 <p className="font-semibold text-sm">Recent Transactions</p>
@@ -323,9 +319,7 @@ function Dashboard() {
           </div>
         </div>
 
-        
         <div className="space-y-5">
-      
           <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
             <div className="flex items-center justify-between mb-2">
               <p className="font-semibold text-sm">Statistic</p>
@@ -349,12 +343,9 @@ function Dashboard() {
                 </PieChart>
               </ResponsiveContainer>
 
-      
               <div className="absolute text-center">
                 <p className="text-xs text-slate-400">Total Expense</p>
-                <p className="text-lg font-semibold">
-                  $3,500
-                </p>
+                <p className="text-lg font-semibold">$3,500</p>
               </div>
             </div>
 
@@ -384,7 +375,6 @@ function Dashboard() {
             </div>
           </div>
 
-        
           <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
             <div className="flex items-center justify-between mb-2">
               <p className="font-semibold text-sm">Recent Activity</p>
@@ -418,26 +408,25 @@ function Dashboard() {
               ].map((item) => (
                 <div key={item.name} className="flex items-start space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
-                    {item.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      }
+                    {item.name.split(" ").map((n) => n[0])}
                   </div>
                   <div className="flex w-full ">
                     <p className="text-slate-700 ">
-                      <span className="font-medium font-semibold">{item.name}</span>
-                      <span className="font-medium">{" "}{item.action}</span>
+                      <span className="font-medium font-semibold">
+                        {item.name}
+                      </span>
+                      <span className="font-medium"> {item.action}</span>
                     </p>
                   </div>
 
                   <div className=" items-start">
-                      <p className="text-[10px] text-slate-400">{item.time}</p>
-                    </div>
+                    <p className="text-[10px] text-slate-400">{item.time}</p>
+                  </div>
                 </div>
               ))}
             </div>
 
-              <br />
+            <br />
             <div className="flex  mb-2">
               <p className="text-xs text-slate-400 items-start">Yesterday</p>
             </div>
@@ -449,7 +438,7 @@ function Dashboard() {
                   action: "updated account settings",
                   time: "16:05",
                 },
-               
+
                 {
                   name: "Taylor Green",
                   action: "reviewed recent transactions",
@@ -458,21 +447,20 @@ function Dashboard() {
               ].map((item) => (
                 <div key={item.name} className="flex items-start space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
-                    {item.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      }
+                    {item.name.split(" ").map((n) => n[0])}
                   </div>
                   <div className="flex w-full ">
                     <p className="text-slate-700 ">
-                      <span className="font-medium font-semibold">{item.name}</span>
-                      <span className="font-medium">{" "}{item.action}</span>
+                      <span className="font-medium font-semibold">
+                        {item.name}
+                      </span>
+                      <span className="font-medium"> {item.action}</span>
                     </p>
                   </div>
 
                   <div className=" items-start">
-                      <p className="text-[10px] text-slate-400">{item.time}</p>
-                    </div>
+                    <p className="text-[10px] text-slate-400">{item.time}</p>
+                  </div>
                 </div>
               ))}
             </div>
