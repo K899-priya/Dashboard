@@ -1,4 +1,5 @@
 import React from "react";
+import { Fa500Px } from "react-icons/fa";
 import {
   BarChart,
   Bar,
@@ -93,8 +94,9 @@ function Dashboard() {
       <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-2">
         <div className="space-y-4">
           <div className="grid xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))] gap-2">
-            <div className="bg-gradient-to-br from-emerald-700 to-emerald-600 text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
-              <p className="mt-4 text-sm font-medium items-start">
+            <div className="bg-gradient-to-br text-emerald-50 rounded-3xl p-5 flex flex-col shadow-sm">
+              <Fa500Px />
+              <p className="mt-4 text-sm font-medium">
                 Andrew Forbist
               </p>
               <div className="flex items-center justify-between">
