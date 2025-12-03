@@ -4,6 +4,8 @@ import { GiWallet } from "react-icons/gi";
 import { RiExchangeDollarFill } from "react-icons/ri"
 import { BsSoundwave } from "react-icons/bs";
 import { CiMenuKebab } from "react-icons/ci";
+import { IoWarning, IoHome } from "react-icons/io5";
+import { MdFlight } from "react-icons/md";
 import {
   BarChart,
   Bar,
@@ -199,18 +201,21 @@ function Dashboard() {
               <div className="space-y-3">
                 {[
                   {
+                    icon: <IoWarning />,
                     name: "Emergency Fund",
                     current: 5000,
                     target: 10000,
                     progress: 0.5,
                   },
                   {
+                    icon: <MdFlight />,
                     name: "Vacation Fund",
                     current: 3000,
                     target: 5000,
                     progress: 0.6,
                   },
                   {
+                    icon: <IoHome />,
                     name: "Home Down Payment",
                     current: 7250,
                     target: 20000,
@@ -221,8 +226,11 @@ function Dashboard() {
                     key={plan.name}
                     className="border border-slate-100 rounded-2xl p-2 bg-slate-40/30"
                   >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex  justify-between mb-2">
+                      <div className="flex justify-between items-center">
+                      <p className="">{plan.icon}</p>
                       <p className="text-sm font-medium">{plan.name}</p>
+                      </div>
                       <p className="text-xs text-slate-400">
                         Target: ${plan.target.toLocaleString()}
                       </p>
