@@ -1,6 +1,6 @@
 import React from "react";
 import { Fa500Px } from "react-icons/fa";
-import { GiWallet } from "react-icons/gi";
+import { GiWallet, GiSettingsKnobs } from "react-icons/gi";
 import { RiExchangeDollarFill } from "react-icons/ri";
 import { BsSoundwave } from "react-icons/bs";
 import { CiMenuKebab } from "react-icons/ci";
@@ -301,16 +301,16 @@ function Dashboard() {
                 <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-3">
                   <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex flex-col">
                     <div className="flex justify-between mb-1">
-                      <p className="text-lg text-slate-600">Cashflow</p>
-                      <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                      <div className="items-start mb-4">
+                        <p className="text-lg text-slate-600">Cashflow</p>
+                        <p className="text-xs font-semibold">Total Balance </p>
+                        <p className="text-lg text-slate-600">
+                          ${totalBalance.toLocaleString()}
+                        </p>
+                      </div>
+                      <button className="text-xs px-3 py-1 rounded-cover bg-slate-50 border border-slate-100">
                         This Year <FaAngleDown className="inline-block ml-1" />
                       </button>
-                    </div>
-                    <div className="items-start mb-4">
-                      <p className="text-xs font-semibold">Total Balance </p>
-                      <p className="text-lg text-slate-600">
-                        ${totalBalance.toLocaleString()}
-                      </p>
                     </div>
 
                     <div className="h-56">
@@ -346,8 +346,8 @@ function Dashboard() {
                       <p className="font-semibold text-sm">
                         Recent Transactions
                       </p>
-                      <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                        This Month
+                      <button className="flex gap-2 text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                        This Month <GiSettingsKnobs />
                       </button>
                     </div>
 
