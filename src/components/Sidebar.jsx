@@ -29,7 +29,7 @@ const navItems = [
 
 function Sidebar() {
   return (
-    <aside className="fixed w-51 bg-green-50 border-r border-green-50 flex flex-col h-full">
+    <aside className=" w-51 bg-green-50 border-r border-green-50 flex flex-col">
       <div className="h-20 flex items-center px-6 border-b border-emerald-100">
         <div className="flex items-center justify-center text-white font-bold">
           <Fa500Px size={25}/>

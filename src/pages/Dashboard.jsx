@@ -100,425 +100,437 @@ function Dashboard() {
   const totalExpenseValue = expenseData.reduce((s, e) => s + e.value, 0);
 
   return (
-    <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
-      <div className="max-w-6xl mx-auto grid xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-2">
-        <div className="space-y-4">
-          <div className="grid xl:grid-cols-[220px_repeat(3,1fr)] gap-2 items-start">
-            <div className="bg-emerald-50 text-emerald-50 rounded-2xl text-start p-5 flex flex-col shadow-sm">
-              <div className="flex justify-between">
-                <Fa500Px />
-                <BsSoundwave />
-              </div>
-              <p className="mt-3 text-lg font-medium">Andrew Forbist</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[9px] uppercase">Balance Amount</p>
-                  <p className="text-sm font-semibold">
-                    ${totalBalance.toLocaleString()}
-                  </p>
+    <div className="flex-1 overflow-auto">
+      <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
+        <div className="max-w-6xl mx-auto grid grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)] gap-2">
+          <div className="space-y-4">
+            <div className="grid grid-cols-[minmax(0,1fr)_repeat(3,1fr)] gap-2 items-start">
+              <div className="bg-emerald-50 text-emerald-50 rounded-2xl text-start p-5 flex flex-col shadow-sm">
+                <div className="flex justify-between">
+                  <Fa500Px />
+                  <BsSoundwave />
                 </div>
-                <div className="text-left text-xs text-emerald-200">
-                  <div className="mt-3 flex items-center gap-6">
-                    <div>
-                      <p className="uppercase tracking-wide text-[10px]">EXP</p>
-                      <p className="font-medium text-[10px] mt-1">11/29</p>
-                    </div>
-                    <div>
-                      <p className="uppercase tracking-wide text-[10px]">CVV</p>
-                      <p className="font-medium text-[10px] mt-1">323</p>
+                <p className="mt-3 text-lg font-medium">Andrew Forbist</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-[9px] uppercase">Balance Amount</p>
+                    <p className="text-sm font-semibold">
+                      ${totalBalance.toLocaleString()}
+                    </p>
+                  </div>
+                  <div className="text-left text-xs text-emerald-200">
+                    <div className="mt-3 flex items-center gap-6">
+                      <div>
+                        <p className="uppercase tracking-wide text-[10px]">
+                          EXP
+                        </p>
+                        <p className="font-medium text-[10px] mt-1">11/29</p>
+                      </div>
+                      <div>
+                        <p className="uppercase tracking-wide text-[10px]">
+                          CVV
+                        </p>
+                        <p className="font-medium text-[10px] mt-1">323</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="bg-white rounded-2xl p-4 text-start shadow-sm border border-slate-100">
-              <div className="flex justify-between">
-                <RiExchangeDollarFill />
-                <CiMenuKebab />
-              </div>
-              <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium ">
-                <IoMdTrendingUp className="size:{16} " />
-                +174%
-              </span>
-              <p className="text-xl font-semibold">
-                ${totalIncome.toLocaleString()}
-              </p>
-              <p className="text-xs text-slate-400 mb-1">Total Income</p>
-            </div>
-
-            <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
-              <div className="flex justify-between">
-                <RiExchangeDollarFill />
-                <CiMenuKebab />
-              </div>
-              <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-rose-50 text-rose-600 text-[11px] font-medium">
-                <IoMdTrendingDown className="size:{16}" />
-                -174%
-              </span>
-              <p className="text-xl font-semibold">
-                ${totalExpense.toLocaleString()}
-              </p>
-              <p className="text-xs text-slate-400 mb-1">Total Expense</p>
-            </div>
-
-            <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
-              <div className="flex justify-between">
-                <GiWallet />
-                <CiMenuKebab />
-              </div>
-              <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
-                <IoMdTrendingUp className="size:{16}" />
-                +124%
-              </span>
-              <p className="text-xl font-semibold">
-                ${totalSaving.toLocaleString()}
-              </p>
-              <p className="text-xs text-slate-400 mb-1">Total Savings</p>
-            </div>
-          </div>
-
-          <div className=" grid grid-rows-[260px,minmax(0,1fr)] gap-2">
-
-            <div className="flex  rounded-2xl p-4 shadow-sm border border-slate-100 justify-between">
-              <BiSolidMessageSquareAdd />
-              <RiExchangeDollarFill />
-              <RiExchangeDollarFill />
-              <AiOutlineHistory />
-            </div>
-
-            <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold text-sm">Daily Limit</p>
-                <CiMenuKebab />
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <p className="text-xs text-slate-500 mb-3">
-                  <b>$2,500.00</b> spent of $20,000.00
+              <div className="bg-white rounded-2xl p-4 text-start shadow-sm border border-slate-100">
+                <div className="flex justify-between">
+                  <RiExchangeDollarFill />
+                  <CiMenuKebab />
+                </div>
+                <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium ">
+                  <IoMdTrendingUp className="w-4 h-4" />
+                  +174%
+                </span>
+                <p className="text-xl font-semibold">
+                  ${totalIncome.toLocaleString()}
                 </p>
-                <p className="text-xs text-slate-400">12.5%</p>
+                <p className="text-xs text-slate-400 mb-1">Total Income</p>
               </div>
 
-              <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
-                <div className="h-full w-1/6 bg-emerald-500 rounded-full" />
+              <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
+                <div className="flex justify-between">
+                  <RiExchangeDollarFill />
+                  <CiMenuKebab />
+                </div>
+                <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-rose-50 text-rose-600 text-[11px] font-medium">
+                  <IoMdTrendingDown className="w-4 h-4" />
+                  -174%
+                </span>
+                <p className="text-xl font-semibold">
+                  ${totalExpense.toLocaleString()}
+                </p>
+                <p className="text-xs text-slate-400 mb-1">Total Expense</p>
+              </div>
+
+              <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
+                <div className="flex justify-between">
+                  <GiWallet />
+                  <CiMenuKebab />
+                </div>
+                <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
+                  <IoMdTrendingUp className="w-4 h-4" />
+                  +124%
+                </span>
+                <p className="text-xl font-semibold">
+                  ${totalSaving.toLocaleString()}
+                </p>
+                <p className="text-xs text-slate-400 mb-1">Total Savings</p>
               </div>
             </div>
 
+            <div className="grid sm:grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-1">
+              <div className="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] gap-2">
+                <div className="space-y-1">
+                  <div className="rounded-2xl bg-white border border-[#e3e8de] p-2 flex items-center justify-between shadow-sm">
+                    <BiSolidMessageSquareAdd />
+                    <RiExchangeDollarFill />
+                    <RiExchangeDollarFill />
+                    <AiOutlineHistory />
+                  </div>
 
-            <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold text-lg">Saving Plans</p>
-                <button className="text-xs text-emerald-600 font-medium">
-                  + Add Plan
-                </button>
-              </div>
-
-              <div className=" flex items-start">
-                <p className="font-semibold text-sm">Your Saving</p>
-              </div>
-              <div className=" flex items-start mb-4">
-                <p className="text-lg font-semibold">$84,000</p>
-              </div>
-
-              <div className="space-y-3">
-                {[
-                  {
-                    icon: <IoWarning />,
-                    name: "Emergency Fund",
-                    current: 5000,
-                    target: 10000,
-                    progress: 0.5,
-                  },
-                  {
-                    icon: <MdFlight />,
-                    name: "Vacation Fund",
-                    current: 3000,
-                    target: 5000,
-                    progress: 0.6,
-                  },
-                  {
-                    icon: <IoHome />,
-                    name: "Home Down Payment",
-                    current: 7250,
-                    target: 20000,
-                    progress: 0.36,
-                  },
-                ].map((plan) => (
-                  <div
-                    key={plan.name}
-                    className="border border-slate-100 rounded-2xl p-2 "
-                  >
-                    <div className="flex  justify-between mb-2">
-                      <div className="flex justify-between items-center gap-2 mb-3">
-                        <p className="rounded-full ">{plan.icon}</p>
-                        <p className="text-sm font-medium">{plan.name}</p>
-                      </div>
+                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                    <div className="flex items-center justify-between mb-4">
+                      <p className="font-semibold text-sm">Daily Limit</p>
                       <CiMenuKebab />
+                    </div>
+                    <div className="flex items-center justify-between mb-4">
+                      <p className="text-xs text-slate-500 mb-3">
+                        <b>$2,500.00</b> spent of $20,000.00
+                      </p>
+                      <p className="text-xs text-slate-400">12.5%</p>
                     </div>
 
                     <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
-                      <div
-                        className="h-full bg-emerald-500 rounded-full"
-                        style={{ width: `${plan.progress * 100}%` }}
-                      />
+                      <div className="h-full w-1/6 bg-emerald-500 rounded-full" />
                     </div>
-                    <div className="flex items-center justify-between text-xs mb-1">
-                      <div className="flex gap-2 mt-1">
-                        <span className="font-medium">
-                          ${plan.current.toLocaleString()}
-                        </span>
-                        <span className="text-slate-400">
-                          {(plan.progress * 100).toFixed(0)}%
+                  </div>
+
+                  <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
+                    <div className="flex items-center justify-between mb-4">
+                      <p className="font-semibold text-lg">Saving Plans</p>
+                      <button className="text-xs text-emerald-600 font-medium">
+                        + Add Plan
+                      </button>
+                    </div>
+
+                    <div className=" flex items-start">
+                      <p className="font-semibold text-sm">Your Saving</p>
+                    </div>
+                    <div className=" flex items-start mb-4">
+                      <p className="text-lg font-semibold">$84,000</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    {[
+                      {
+                        icon: <IoWarning />,
+                        name: "Emergency Fund",
+                        current: 5000,
+                        target: 10000,
+                        progress: 0.5,
+                      },
+                      {
+                        icon: <MdFlight />,
+                        name: "Vacation Fund",
+                        current: 3000,
+                        target: 5000,
+                        progress: 0.6,
+                      },
+                      {
+                        icon: <IoHome />,
+                        name: "Home Down Payment",
+                        current: 7250,
+                        target: 20000,
+                        progress: 0.36,
+                      },
+                    ].map((plan) => (
+                      <div
+                        key={plan.name}
+                        className="border border-slate-100 rounded-2xl p-2 "
+                      >
+                        <div className="flex  justify-between mb-2">
+                          <div className="flex justify-between items-center gap-2 mb-3">
+                            <p className="rounded-full ">{plan.icon}</p>
+                            <p className="text-sm font-medium">{plan.name}</p>
+                          </div>
+                          <CiMenuKebab />
+                        </div>
+
+                        <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-500 rounded-full"
+                            style={{ width: `${plan.progress * 100}%` }}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between text-xs mb-1">
+                          <div className="flex gap-2 mt-1">
+                            <span className="font-medium">
+                              ${plan.current.toLocaleString()}
+                            </span>
+                            <span className="text-slate-400">
+                              {(plan.progress * 100).toFixed(0)}%
+                            </span>
+                          </div>
+                          <p className="text-xs text-slate-400">
+                            Target: ${plan.target.toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-4">
+                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex flex-col">
+                    <div className="flex justify-between mb-1">
+                      <p className="text-lg text-slate-600">Cashflow</p>
+                      <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                        This Year <FaAngleDown className="inline-block ml-1" />
+                      </button>
+                    </div>
+                    <div className="items-start mb-4">
+                      <p className="text-xs font-semibold">Total Balance </p>
+                      <p className="text-lg text-slate-600">
+                        ${totalBalance.toLocaleString()}
+                      </p>
+                    </div>
+
+                    <div className="h-56">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={cashflowData} margin={{ left: -20 }}>
+                          <CartesianGrid
+                            strokeDasharray="3 3"
+                            vertical={false}
+                          />
+                          <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                          <YAxis tick={{ fontSize: 12 }} />
+                          <Tooltip />
+                          <Legend />
+                          <Bar
+                            dataKey="income"
+                            name="Income"
+                            radius={[6, 6, 0, 0]}
+                            fill="#14532d"
+                          />
+                          <Bar
+                            dataKey="expense"
+                            name="Expense"
+                            radius={[6, 6, 0, 0]}
+                            fill="#4ade80"
+                          />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+                <div className="flex items-center justify-between mb-4">
+                  <p className="font-semibold text-sm">Recent Transactions</p>
+                  <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                    This Month
+                  </button>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-xs">
+                    <thead>
+                      <tr className="text-left text-slate-400 border-b border-slate-100">
+                        <th className="py-2 pr-4 whitespace-nowrap">
+                          Transaction Name
+                        </th>
+                        <th className="py-2 pr-4 whitespace-nowrap">
+                          Date & Time
+                        </th>
+                        <th className="py-2 pr-4 whitespace-nowrap">Amount</th>
+                        <th className="py-2 pr-4 whitespace-nowrap">Note</th>
+                        <th className="py-2 pr-4 whitespace-nowrap text-right">
+                          Status
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {transactions.map((t) => (
+                        <tr
+                          key={t.name}
+                          className="border-b border-slate-50 last:border-0"
+                        >
+                          <td className="py-3 pr-4 text-slate-700">{t.name}</td>
+                          <td className="py-3 pr-4 text-slate-500">
+                            <div>{t.date}</div>
+                            <div className="text-[10px]">{t.time}</div>
+                          </td>
+                          <td className="py-3 pr-4 text-slate-700">
+                            ${Math.abs(t.amount).toFixed(2)}
+                          </td>
+                          <td className="py-3 pr-4 text-slate-500 max-w-xs">
+                            {t.note}
+                          </td>
+                          <td className="py-3 pr-2 text-right">
+                            <StatusBadge status={t.status} />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+              <div className="flex items-center justify-between mb-2">
+                <p className="font-semibold text-sm">Statistic</p>
+                <p className="text-xs text-slate-400">This Month</p>
+              </div>
+
+              <div className="h-52 flex items-center justify-center relative">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={expenseData}
+                      outerRadius={80}
+                      innerRadius={60}
+                      paddingAngle={2}
+                      dataKey="value"
+                    >
+                      {expenseData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+
+                <div className="absolute text-center">
+                  <p className="text-xs text-slate-400">Total Expense</p>
+                  <p className="text-lg font-semibold">$3,500</p>
+                </div>
+              </div>
+
+              <div className="mt-2 space-y-1 text-xs">
+                {expenseData.map((item) => {
+                  const pct = ((item.value / totalExpenseValue) * 100).toFixed(
+                    0
+                  );
+                  return (
+                    <div
+                      key={item.name}
+                      className="flex items-center justify-between"
+                    >
+                      <div className="flex items-center">
+                        <span
+                          className="w-3 h-3 rounded-full mr-2"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span className="text-slate-600">
+                          {pct}% {item.name}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400">
-                        Target: ${plan.target.toLocaleString()}
+                      <span className="font-medium text-slate-800">
+                        ${item.value}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
+              <div className="flex items-center justify-between mb-2">
+                <p className="font-semibold text-sm">Recent Activity</p>
+              </div>
+              <div className="flex  mb-2">
+                <p className="text-xs text-slate-400 items-start">Today</p>
+              </div>
+
+              <div className="space-y-5 text-xs">
+                {[
+                  {
+                    name: "Jamie Smith",
+                    action: "updated account settings",
+                    time: "16:05",
+                  },
+                  {
+                    name: "Alex Johnson",
+                    action: "logged in",
+                    time: "13:05",
+                  },
+                  {
+                    name: "Morgan Lee",
+                    action: "added a new savings goal for vacation",
+                    time: "02:05",
+                  },
+                  {
+                    name: "Taylor Green",
+                    action: "reviewed recent transactions",
+                    time: "03:15",
+                  },
+                ].map((item) => (
+                  <div key={item.name} className="flex items-start space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
+                      {item.name.split(" ").map((n) => n[0])}
+                    </div>
+                    <div className="flex w-full ">
+                      <p className="text-slate-700 ">
+                        <span className="font-medium font-semibold">
+                          {item.name}
+                        </span>
+                        <span className="font-medium"> {item.action}</span>
                       </p>
+                    </div>
+
+                    <div className=" items-start">
+                      <p className="text-[10px] text-slate-400">{item.time}</p>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
 
-          <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-4">
-            <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex flex-col">
-              <div className="flex justify-between mb-1">
-                <p className="text-lg text-slate-600">Cashflow</p>
-                <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                  This Year <FaAngleDown className="inline-block ml-1" />
-                </button>
-              </div>
-              <div className="items-start mb-4">
-                <p className="text-xs font-semibold">Total Balance </p>
-                <p className="text-lg text-slate-600">
-                  ${totalBalance.toLocaleString()}
-                </p>
+              <br />
+              <div className="flex  mb-2">
+                <p className="text-xs text-slate-400 items-start">Yesterday</p>
               </div>
 
-              <div className="h-56">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={cashflowData} margin={{ left: -20 }}>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                    <YAxis tick={{ fontSize: 12 }} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar
-                      dataKey="income"
-                      name="Income"
-                      radius={[6, 6, 0, 0]}
-                      fill="#14532d"
-                    />
-                    <Bar
-                      dataKey="expense"
-                      name="Expense"
-                      radius={[6, 6, 0, 0]}
-                      fill="#4ade80"
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
+              <div className="space-y-5 text-xs">
+                {[
+                  {
+                    name: "Wailson Smith",
+                    action: "updated account settings",
+                    time: "16:05",
+                  },
 
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
-              <div className="flex items-center justify-between mb-4">
-                <p className="font-semibold text-sm">Recent Transactions</p>
-                <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                  This Month
-                </button>
-              </div>
-
-              <div className="overflow-x-auto">
-                <table className="min-w-full text-xs">
-                  <thead>
-                    <tr className="text-left text-slate-400 border-b border-slate-100">
-                      <th className="py-2 pr-4 whitespace-nowrap">
-                        Transaction Name
-                      </th>
-                      <th className="py-2 pr-4 whitespace-nowrap">
-                        Date & Time
-                      </th>
-                      <th className="py-2 pr-4 whitespace-nowrap">Amount</th>
-                      <th className="py-2 pr-4 whitespace-nowrap">Note</th>
-                      <th className="py-2 pr-4 whitespace-nowrap text-right">
-                        Status
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {transactions.map((t) => (
-                      <tr
-                        key={t.name}
-                        className="border-b border-slate-50 last:border-0"
-                      >
-                        <td className="py-3 pr-4 text-slate-700">{t.name}</td>
-                        <td className="py-3 pr-4 text-slate-500">
-                          <div>{t.date}</div>
-                          <div className="text-[10px]">{t.time}</div>
-                        </td>
-                        <td className="py-3 pr-4 text-slate-700">
-                          ${Math.abs(t.amount).toFixed(2)}
-                        </td>
-                        <td className="py-3 pr-4 text-slate-500 max-w-xs">
-                          {t.note}
-                        </td>
-                        <td className="py-3 pr-2 text-right">
-                          <StatusBadge status={t.status} />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-5">
-          <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
-            <div className="flex items-center justify-between mb-2">
-              <p className="font-semibold text-sm">Statistic</p>
-              <p className="text-xs text-slate-400">This Month</p>
-            </div>
-
-            <div className="h-52 flex items-center justify-center relative">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={expenseData}
-                    outerRadius={80}
-                    innerRadius={60}
-                    paddingAngle={2}
-                    dataKey="value"
-                  >
-                    {expenseData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
-
-              <div className="absolute text-center">
-                <p className="text-xs text-slate-400">Total Expense</p>
-                <p className="text-lg font-semibold">$3,500</p>
-              </div>
-            </div>
-
-            <div className="mt-2 space-y-1 text-xs">
-              {expenseData.map((item) => {
-                const pct = ((item.value / totalExpenseValue) * 100).toFixed(0);
-                return (
-                  <div
-                    key={item.name}
-                    className="flex items-center justify-between"
-                  >
-                    <div className="flex items-center">
-                      <span
-                        className="w-3 h-3 rounded-full mr-2"
-                        style={{ backgroundColor: item.color }}
-                      />
-                      <span className="text-slate-600">
-                        {pct}% {item.name}
-                      </span>
+                  {
+                    name: "Taylor Green",
+                    action: "reviewed recent transactions",
+                    time: "03:15",
+                  },
+                ].map((item) => (
+                  <div key={item.name} className="flex items-start space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
+                      {item.name.split(" ").map((n) => n[0])}
                     </div>
-                    <span className="font-medium text-slate-800">
-                      ${item.value}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+                    <div className="flex w-full ">
+                      <p className="text-slate-700 ">
+                        <span className="font-medium font-semibold">
+                          {item.name}
+                        </span>
+                        <span className="font-medium"> {item.action}</span>
+                      </p>
+                    </div>
 
-          <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
-            <div className="flex items-center justify-between mb-2">
-              <p className="font-semibold text-sm">Recent Activity</p>
-            </div>
-            <div className="flex  mb-2">
-              <p className="text-xs text-slate-400 items-start">Today</p>
-            </div>
-
-            <div className="space-y-5 text-xs">
-              {[
-                {
-                  name: "Jamie Smith",
-                  action: "updated account settings",
-                  time: "16:05",
-                },
-                {
-                  name: "Alex Johnson",
-                  action: "logged in",
-                  time: "13:05",
-                },
-                {
-                  name: "Morgan Lee",
-                  action: "added a new savings goal for vacation",
-                  time: "02:05",
-                },
-                {
-                  name: "Taylor Green",
-                  action: "reviewed recent transactions",
-                  time: "03:15",
-                },
-              ].map((item) => (
-                <div key={item.name} className="flex items-start space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
-                    {item.name.split(" ").map((n) => n[0])}
+                    <div className=" items-start">
+                      <p className="text-[10px] text-slate-400">{item.time}</p>
+                    </div>
                   </div>
-                  <div className="flex w-full ">
-                    <p className="text-slate-700 ">
-                      <span className="font-medium font-semibold">
-                        {item.name}
-                      </span>
-                      <span className="font-medium"> {item.action}</span>
-                    </p>
-                  </div>
-
-                  <div className=" items-start">
-                    <p className="text-[10px] text-slate-400">{item.time}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <br />
-            <div className="flex  mb-2">
-              <p className="text-xs text-slate-400 items-start">Yesterday</p>
-            </div>
-
-            <div className="space-y-5 text-xs">
-              {[
-                {
-                  name: "Wailson Smith",
-                  action: "updated account settings",
-                  time: "16:05",
-                },
-
-                {
-                  name: "Taylor Green",
-                  action: "reviewed recent transactions",
-                  time: "03:15",
-                },
-              ].map((item) => (
-                <div key={item.name} className="flex items-start space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-[11px] font-semibold text-emerald-700">
-                    {item.name.split(" ").map((n) => n[0])}
-                  </div>
-                  <div className="flex w-full ">
-                    <p className="text-slate-700 ">
-                      <span className="font-medium font-semibold">
-                        {item.name}
-                      </span>
-                      <span className="font-medium"> {item.action}</span>
-                    </p>
-                  </div>
-
-                  <div className=" items-start">
-                    <p className="text-[10px] text-slate-400">{item.time}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
