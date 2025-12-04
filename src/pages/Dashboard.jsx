@@ -102,10 +102,10 @@ function Dashboard() {
   return (
     <div className="flex-1 overflow-auto">
       <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
-        <div className="max-w-6xl mx-auto grid grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)] gap-2">
+        <div className="max-w-full mx-auto grid grid-cols-[minmax(0,2.9fr)_minmax(0,1fr)] gap-2">
           <div className="space-y-4">
             <div className="grid grid-cols-[minmax(0,1fr)_repeat(3,1fr)] gap-2 items-start">
-              <div className="bg-emerald-50 text-emerald-50 rounded-2xl text-start p-5 flex flex-col shadow-sm">
+              <div className="bg-emerald-50 text-emerald-50 rounded-2xl text-start p-4 flex flex-col shadow-sm">
                 <div className="flex justify-between">
                   <Fa500Px />
                   <BsSoundwave />
@@ -113,7 +113,7 @@ function Dashboard() {
                 <p className="mt-3 text-lg font-medium">Andrew Forbist</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[9px] uppercase">Balance Amount</p>
+                    <p className="text-[8px] uppercase">Balance Amount</p>
                     <p className="text-sm font-semibold">
                       ${totalBalance.toLocaleString()}
                     </p>
@@ -183,14 +183,27 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-[minmax(0,1fr)] gap-3 lg:grid-cols-1">
-              <div className="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] gap-2">
-                <div className="space-y-1">
+            <div className="grid gap-3 sm:grid-cols-1">
+              <div className="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,2.1fr)] gap-2">
+                <div className="space-y-2">
                   <div className="rounded-2xl bg-white border border-[#e3e8de] p-2 flex items-center justify-between shadow-sm">
-                    <BiSolidMessageSquareAdd />
+                    <div className="flex flex-col items-center gap-1">
+                      <BiSolidMessageSquareAdd />
+                      <p className="text-[10px]  text-slate-400">TopUp</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <RiExchangeDollarFill />
+                      <p className="text-[10px]  text-slate-400">Send</p>
+                    </div> 
+                    <div className="flex flex-col items-center gap-1"> 
                     <RiExchangeDollarFill />
-                    <RiExchangeDollarFill />
+                    <p className="text-[10px]  text-slate-400">Withdraw</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
                     <AiOutlineHistory />
+                    <p className="text-[10px]  text-slate-400">History</p>
+                    </div>
+                    
                   </div>
 
                   <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
@@ -286,7 +299,7 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-4">
+                <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-3">
                   <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex flex-col">
                     <div className="flex justify-between mb-1">
                       <p className="text-lg text-slate-600">Cashflow</p>
@@ -383,6 +396,8 @@ function Dashboard() {
               </div>
             </div>
           </div>
+
+
 
           <div className="space-y-5">
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
