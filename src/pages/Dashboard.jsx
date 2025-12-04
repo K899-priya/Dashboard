@@ -194,16 +194,15 @@ function Dashboard() {
                     <div className="flex flex-col items-center gap-1">
                       <RiExchangeDollarFill />
                       <p className="text-[10px]  text-slate-400">Send</p>
-                    </div> 
-                    <div className="flex flex-col items-center gap-1"> 
-                    <RiExchangeDollarFill />
-                    <p className="text-[10px]  text-slate-400">Withdraw</p>
                     </div>
                     <div className="flex flex-col items-center gap-1">
-                    <AiOutlineHistory />
-                    <p className="text-[10px]  text-slate-400">History</p>
+                      <RiExchangeDollarFill />
+                      <p className="text-[10px]  text-slate-400">Withdraw</p>
                     </div>
-                    
+                    <div className="flex flex-col items-center gap-1">
+                      <AiOutlineHistory />
+                      <p className="text-[10px]  text-slate-400">History</p>
+                    </div>
                   </div>
 
                   <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
@@ -341,63 +340,70 @@ function Dashboard() {
                       </ResponsiveContainer>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-semibold text-sm">Recent Transactions</p>
-                  <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                    This Month
-                  </button>
-                </div>
 
-                <div className="overflow-x-auto">
-                  <table className="min-w-full text-xs">
-                    <thead>
-                      <tr className="text-left text-slate-400 border-b border-slate-100">
-                        <th className="py-2 pr-4 whitespace-nowrap">
-                          Transaction Name
-                        </th>
-                        <th className="py-2 pr-4 whitespace-nowrap">
-                          Date & Time
-                        </th>
-                        <th className="py-2 pr-4 whitespace-nowrap">Amount</th>
-                        <th className="py-2 pr-4 whitespace-nowrap">Note</th>
-                        <th className="py-2 pr-4 whitespace-nowrap text-right">
-                          Status
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {transactions.map((t) => (
-                        <tr
-                          key={t.name}
-                          className="border-b border-slate-50 last:border-0"
-                        >
-                          <td className="py-3 pr-4 text-slate-700">{t.name}</td>
-                          <td className="py-3 pr-4 text-slate-500">
-                            <div>{t.date}</div>
-                            <div className="text-[10px]">{t.time}</div>
-                          </td>
-                          <td className="py-3 pr-4 text-slate-700">
-                            ${Math.abs(t.amount).toFixed(2)}
-                          </td>
-                          <td className="py-3 pr-4 text-slate-500 max-w-xs">
-                            {t.note}
-                          </td>
-                          <td className="py-3 pr-2 text-right">
-                            <StatusBadge status={t.status} />
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                    <div className="flex items-center justify-between mb-4">
+                      <p className="font-semibold text-sm">
+                        Recent Transactions
+                      </p>
+                      <button className="text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                        This Month
+                      </button>
+                    </div>
+
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full text-xs">
+                        <thead>
+                          <tr className=" border-[#edf2ea] text-[#94a3b8]">
+                            <th className="py-2 pr-4 whitespace-nowrap">
+                              Transaction Name
+                            </th>
+                            <th className="py-2 pr-4 whitespace-nowrap">
+                              Date & Time
+                            </th>
+                            <th className="py-2 pr-4 whitespace-nowrap">
+                              Amount
+                            </th>
+                            <th className="py-2 pr-4 whitespace-nowrap">
+                              Note
+                            </th>
+                            <th className="py-2 pr-4 whitespace-nowrap text-right">
+                              Status
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {transactions.map((t) => (
+                            <tr
+                              key={t.name}
+                              className="border-b border-slate-50 last:border-0"
+                            >
+                              <td className="py-2 pr-4 text-slate-700">
+                                {t.name}
+                              </td>
+                              <td className="py-2 pr-4 text-slate-500">
+                                <div>{t.date}</div>
+                                <div className="text-[10px]">{t.time}</div>
+                              </td>
+                              <td className="py-3 pr-4 text-slate-700">
+                                ${Math.abs(t.amount).toFixed(2)}
+                              </td>
+                              <td className="py-3 pr-4 text-slate-500 max-w-xs">
+                                {t.note}
+                              </td>
+                              <td className="py-3 pr-2 text-right">
+                                <StatusBadge status={t.status} />
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-
 
           <div className="space-y-5">
             <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
