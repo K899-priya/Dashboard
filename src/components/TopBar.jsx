@@ -18,13 +18,13 @@ function TopBar() {
           />
         </div>
 
-        <button className="relative w-10 h-10 rounded-full bg-slate-100 flex items-center justify-between">
+        <div className="relative gap-3 flex items-center justify-between">
           <IoChatbubbleEllipses />
           <FiBell className="text-slate-600" />
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-[10px] text-white flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full text-[7px] text-white flex items-center justify-center">
             3
           </span>
-        </button>
+        </div>
 
         <div className="flex items-center space-x-2">
           <div className="hidden sm:block">
