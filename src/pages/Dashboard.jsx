@@ -298,10 +298,10 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-3">
-                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex flex-col">
-                    <div className="flex justify-between mb-1">
-                      <div className="items-start mb-4">
+                <div className="grid grid-cols-[minmax(0,1.2fr),minmax(0,1.7fr)] gap-2">
+                  <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100 flex flex-col">
+                    <div className="flex justify-between ">
+                      <div className="items-start ">
                         <p className="text-lg text-slate-600">Cashflow</p>
                         <p className="text-xs font-semibold">Total Balance </p>
                         <p className="text-lg text-slate-600">
@@ -313,18 +313,10 @@ function Dashboard() {
                       </button>
                     </div>
 
-                    <div className="h-56">
+                    <div className="h-54 mt-2 ">
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={cashflowData} margin={{ left: -20 }}>
-                          <CartesianGrid
-                            strokeDasharray="3 3"
-                            vertical={false}
-                          />
-                          <XAxis dataKey="month" tick={{ fontSize: 12 }} />
-                          <YAxis tick={{ fontSize: 12 }} />
-                          <Tooltip />
-                          <Legend />
-                          <Bar
+                        <BarChart data={cashflowData} margin={{ left: -15 }}>
+                           <Bar
                             dataKey="income"
                             name="Income"
                             radius={[6, 6, 0, 0]}
@@ -336,25 +328,39 @@ function Dashboard() {
                             radius={[6, 6, 0, 0]}
                             fill="#4ade80"
                           />
+                          <CartesianGrid
+                            strokeDasharray="3 3"
+                            vertical={false}
+                          />
+                          <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                          <YAxis tick={{ fontSize: 12 }} />
+                          <Tooltip />
+                          <Legend />
+                         
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
                   </div>
 
+
                   <div className="bg-white rounded-2xl p-1 shadow-sm border border-slate-100">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-2 mt-1">
                       <p className="font-semibold text-sm">
                         Recent Transactions
                       </p>
-                      <button className="flex gap-2 text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
-                        This Month <GiSettingsKnobs />
-                      </button>
+                      <div className="flex gap-2">
+                        <button className="flex gap-2 text-xs px-3 py-1 rounded-full bg-slate-50 border border-slate-100">
+                          This Month
+                          <FaAngleDown className="inline-block ml-1" />
+                        </button>
+                        <GiSettingsKnobs className="rounded-cover bg-slate-100 border border-slate-100  mr-1" />
+                      </div>
                     </div>
 
                     <div className="overflow-x-auto">
                       <table className="min-w-full text-xs">
                         <thead>
-                          <tr className=" border-[#edf2ea] text-[#94a3b8]">
+                          <tr className=" text-[#94a3b8] border border-slate-100">
                             <th className="py-2 pr-4 whitespace-nowrap">
                               Transaction Name
                             </th>
@@ -406,10 +412,17 @@ function Dashboard() {
           </div>
 
           <div className="space-y-5">
-            <div className="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
               <div className="flex items-center justify-between mb-2">
                 <p className="font-semibold text-sm">Statistic</p>
+                <div className="flex border border-slate-100 rounded-full px-3 py-1">
                 <p className="text-xs text-slate-400">This Month</p>
+                <FaAngleDown className="inline-block ml-1" />
+                </div>
+              </div>
+              <div className="flex gap-4 items-right justify-end">
+                <p className="text-xs text-slate-400 mb-2">Income </p>
+                <p className="text-xs text-slate-400 mb-2 underline decoration-2">Expense </p>  
               </div>
 
               <div className="h-52 flex items-center justify-center relative">
@@ -467,7 +480,7 @@ function Dashboard() {
               <div className="flex items-center justify-between mb-2">
                 <p className="font-semibold text-sm">Recent Activity</p>
               </div>
-              <div className="flex  mb-2">
+              <div className="flex  mb-1">
                 <p className="text-xs text-slate-400 items-start">Today</p>
               </div>
 
@@ -546,10 +559,10 @@ function Dashboard() {
                       </p>
                     </div>
 
-                    <div className=" items-start">
                       <p className="text-[10px] text-slate-400">{item.time}</p>
-                    </div>
+                
                   </div>
+                  
                 ))}
               </div>
             </div>
