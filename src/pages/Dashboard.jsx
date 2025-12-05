@@ -308,7 +308,7 @@ function Dashboard() {
                           ${totalBalance.toLocaleString()}
                         </p>
                       </div>
-                      <button className="text-xs px-3 py-1 rounded-cover bg-slate-50 border border-slate-100">
+                      <button className="text-xs px-3 py-1 rounded-full h-6 w-26 bg-slate-50 border border-slate-100">
                         This Year <FaAngleDown className="inline-block ml-1" />
                       </button>
                     </div>
@@ -341,7 +341,7 @@ function Dashboard() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100">
+                  <div className="bg-white rounded-2xl p-1 shadow-sm border border-slate-100">
                     <div className="flex items-center justify-between mb-4">
                       <p className="font-semibold text-sm">
                         Recent Transactions
@@ -376,12 +376,12 @@ function Dashboard() {
                           {transactions.map((t) => (
                             <tr
                               key={t.name}
-                              className="border-b border-slate-50 last:border-0"
+                              className="border-b items-start border-slate-50 last:border-0"
                             >
-                              <td className="py-2 pr-4 text-slate-700">
+                              <td className="py-2 pr-7 text-slate-700">
                                 {t.name}
                               </td>
-                              <td className="py-2 pr-4 text-slate-500">
+                              <td className="py-2 pr-6 text-slate-500">
                                 <div>{t.date}</div>
                                 <div className="text-[10px]">{t.time}</div>
                               </td>
