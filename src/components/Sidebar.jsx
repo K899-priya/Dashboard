@@ -30,7 +30,7 @@ const navItems = [
 function Sidebar() {
   return (
     <aside className=" w-51 bg-green-50 border-r border-green-50 flex flex-col">
-      <div className="h-20 flex items-center px-6 border-b border-emerald-100">
+      <div className="h-15 flex items-center px-6 border-b border-emerald-100">
         <div className="flex items-center justify-center text-white font-bold">
           <Fa500Px size={25}/>
         </div>
@@ -39,7 +39,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <nav className="flex-1 p-4 space-y-1">
+      <nav className="flex-1 p-2 space-y-1">
         {navItems.map((item) =>
           item.to ? (
             <NavLink
@@ -69,8 +69,8 @@ function Sidebar() {
         )}
       </nav>
 
-      <div className="p-4">
-        <div className="bg-emerald-900 text-emerald-50 rounded-2xl p-4 flex flex-col space-y-3">
+      <div className="p-3">
+        <div className="bg-emerald-800 text-emerald-50 rounded-2xl p-4 flex flex-col space-y-3">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-700">
             <FiLock className="text-xl" />
             {/*<div> 
