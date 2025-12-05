@@ -73,7 +73,11 @@ function Sidebar() {
         <div className="bg-emerald-900 text-emerald-50 rounded-2xl p-4 flex flex-col space-y-3">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-700">
             <FiLock className="text-xl" />
+            {/*<div> 
+               <Fa500Px size={25}/>
+            </div>*/}
           </div>
+          
           <div>
             <p className="font-semibold text-sm">
               Gain full access to your finances

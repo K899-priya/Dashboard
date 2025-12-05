@@ -139,7 +139,7 @@ function Dashboard() {
 
               <div className="bg-white rounded-2xl p-4 text-start shadow-sm border border-slate-100">
                 <div className="flex justify-between">
-                  <RiExchangeDollarFill />
+                  <RiExchangeDollarFill className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                   <CiMenuKebab />
                 </div>
                 <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium ">
@@ -154,7 +154,7 @@ function Dashboard() {
 
               <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
                 <div className="flex justify-between">
-                  <RiExchangeDollarFill />
+                  <RiExchangeDollarFill className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                   <CiMenuKebab />
                 </div>
                 <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-rose-50 text-rose-600 text-[11px] font-medium">
@@ -169,7 +169,7 @@ function Dashboard() {
 
               <div className="bg-white rounded-2xl text-start p-4 shadow-sm border border-slate-100">
                 <div className="flex justify-between">
-                  <GiWallet />
+                  <GiWallet className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                   <CiMenuKebab />
                 </div>
                 <span className="inline-flex mt-3 px-2 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[11px] font-medium">
@@ -188,19 +188,19 @@ function Dashboard() {
                 <div className="space-y-2">
                   <div className="rounded-2xl bg-white border border-[#e3e8de] p-2 flex items-center justify-between shadow-sm">
                     <div className="flex flex-col items-center gap-1">
-                      <BiSolidMessageSquareAdd />
+                      <BiSolidMessageSquareAdd className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                       <p className="text-[10px]  text-slate-400">TopUp</p>
                     </div>
                     <div className="flex flex-col items-center gap-1">
-                      <RiExchangeDollarFill />
+                      <RiExchangeDollarFill className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                       <p className="text-[10px]  text-slate-400">Send</p>
                     </div>
                     <div className="flex flex-col items-center gap-1">
-                      <RiExchangeDollarFill />
+                      <RiExchangeDollarFill className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                       <p className="text-[10px]  text-slate-400">Withdraw</p>
                     </div>
                     <div className="flex flex-col items-center gap-1">
-                      <AiOutlineHistory />
+                      <AiOutlineHistory className="w-5 h-5 items-center rounded-cover bg-emerald-700" />
                       <p className="text-[10px]  text-slate-400">History</p>
                     </div>
                   </div>
@@ -236,65 +236,67 @@ function Dashboard() {
                     <div className=" flex items-start mb-4">
                       <p className="text-lg font-semibold">$84,000</p>
                     </div>
-                  </div>
 
-                  <div className="space-y-3">
-                    {[
-                      {
-                        icon: <IoWarning />,
-                        name: "Emergency Fund",
-                        current: 5000,
-                        target: 10000,
-                        progress: 0.5,
-                      },
-                      {
-                        icon: <MdFlight />,
-                        name: "Vacation Fund",
-                        current: 3000,
-                        target: 5000,
-                        progress: 0.6,
-                      },
-                      {
-                        icon: <IoHome />,
-                        name: "Home Down Payment",
-                        current: 7250,
-                        target: 20000,
-                        progress: 0.36,
-                      },
-                    ].map((plan) => (
-                      <div
-                        key={plan.name}
-                        className="border border-slate-100 rounded-2xl p-2 "
-                      >
-                        <div className="flex  justify-between mb-2">
-                          <div className="flex justify-between items-center gap-2 mb-3">
-                            <p className="rounded-full ">{plan.icon}</p>
-                            <p className="text-sm font-medium">{plan.name}</p>
+                    <div className="space-y-3">
+                      {[
+                        {
+                          icon: <IoWarning />,
+                          name: "Emergency Fund",
+                          current: 5000,
+                          target: 10000,
+                          progress: 0.5,
+                        },
+                        {
+                          icon: <MdFlight />,
+                          name: "Vacation Fund",
+                          current: 3000,
+                          target: 5000,
+                          progress: 0.6,
+                        },
+                        {
+                          icon: <IoHome />,
+                          name: "Home Down Payment",
+                          current: 7250,
+                          target: 20000,
+                          progress: 0.36,
+                        },
+                      ].map((plan) => (
+                        <div
+                          key={plan.name}
+                          className="border border-slate-100 rounded-2xl p-2 "
+                        >
+                          <div className="flex  justify-between mb-2">
+                            <div className="flex justify-between items-center gap-2 mb-3">
+                              <p className="w-4 h-4 items-center rounded-cover bg-emerald-700">
+                                {plan.icon}
+                              </p>
+                              <p className="text-sm font-medium">{plan.name}</p>
+                            </div>
+                            <CiMenuKebab />
                           </div>
-                          <CiMenuKebab />
-                        </div>
 
-                        <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
-                          <div
-                            className="h-full bg-emerald-500 rounded-full"
-                            style={{ width: `${plan.progress * 100}%` }}
-                          />
-                        </div>
-                        <div className="flex items-center justify-between text-xs mb-1">
-                          <div className="flex gap-2 mt-1">
-                            <span className="font-medium">
-                              ${plan.current.toLocaleString()}
-                            </span>
-                            <span className="text-slate-400">
-                              {(plan.progress * 100).toFixed(0)}%
-                            </span>
+                          <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-500 rounded-full"
+                              style={{ width: `${plan.progress * 100}%` }}
+                            />
                           </div>
-                          <p className="text-xs text-slate-400">
-                            Target: ${plan.target.toLocaleString()}
-                          </p>
+                          <div className="flex items-center justify-between text-xs mb-1">
+                            <div className="flex gap-2 mt-1">
+                              <span className="font-medium">
+                                ${plan.current.toLocaleString()}
+                              </span>
+                              <span className="text-slate-400">
+                                {(plan.progress * 100).toFixed(0)}%
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-400">
+                              Target: ${plan.target.toLocaleString()}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -316,7 +318,7 @@ function Dashboard() {
                     <div className="h-54 mt-2 ">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={cashflowData} margin={{ left: -15 }}>
-                           <Bar
+                          <Bar
                             dataKey="income"
                             name="Income"
                             radius={[6, 6, 0, 0]}
@@ -336,12 +338,10 @@ function Dashboard() {
                           <YAxis tick={{ fontSize: 12 }} />
                           <Tooltip />
                           <Legend />
-                         
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
                   </div>
-
 
                   <div className="bg-white rounded-2xl p-1 shadow-sm border border-slate-100">
                     <div className="flex items-center justify-between mb-2 mt-1">
@@ -353,14 +353,14 @@ function Dashboard() {
                           This Month
                           <FaAngleDown className="inline-block ml-1" />
                         </button>
-                        <GiSettingsKnobs className="rounded-cover bg-slate-100 border border-slate-100  mr-1" />
+                        <GiSettingsKnobs className="w-5 h-5 items-center rounded-cover bg-emerald-700  mr-1" />
                       </div>
                     </div>
 
                     <div className="overflow-x-auto">
                       <table className="min-w-full text-xs">
                         <thead>
-                          <tr className=" text-[#94a3b8] border border-slate-100">
+                          <tr className=" text-[#94a3b8]  items-center rounded-cover bg-emerald-900">
                             <th className="py-2 pr-4 whitespace-nowrap">
                               Transaction Name
                             </th>
@@ -416,13 +416,15 @@ function Dashboard() {
               <div className="flex items-center justify-between mb-2">
                 <p className="font-semibold text-sm">Statistic</p>
                 <div className="flex border border-slate-100 rounded-full px-3 py-1">
-                <p className="text-xs text-slate-400">This Month</p>
-                <FaAngleDown className="inline-block ml-1" />
+                  <p className="text-xs text-slate-400">This Month</p>
+                  <FaAngleDown className="inline-block ml-1" />
                 </div>
               </div>
               <div className="flex gap-4 items-right justify-end">
                 <p className="text-xs text-slate-400 mb-2">Income </p>
-                <p className="text-xs text-slate-400 mb-2 underline decoration-2">Expense </p>  
+                <p className="text-xs text-slate-400 mb-2 underline decoration-2 decoration-blue-500">
+                  Expense{" "}
+                </p>
               </div>
 
               <div className="h-52 flex items-center justify-center relative">
@@ -479,12 +481,13 @@ function Dashboard() {
             <div className="bg-white rounded-2xl p-2 shadow-sm border border-slate-100">
               <div className="flex items-center justify-between mb-2">
                 <p className="font-semibold text-sm">Recent Activity</p>
+                <CiMenuKebab />
               </div>
               <div className="flex  mb-1">
                 <p className="text-xs text-slate-400 items-start">Today</p>
               </div>
 
-              <div className="space-y-5 text-xs">
+              <div className="space-y-4 text-xs">
                 {[
                   {
                     name: "Jamie Smith",
@@ -559,10 +562,8 @@ function Dashboard() {
                       </p>
                     </div>
 
-                      <p className="text-[10px] text-slate-400">{item.time}</p>
-                
+                    <p className="text-[10px] text-slate-400">{item.time}</p>
                   </div>
-                  
                 ))}
               </div>
             </div>
