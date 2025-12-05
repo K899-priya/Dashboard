@@ -4,15 +4,14 @@ import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
     <div className="min-h-screen bg-[#f6f8fb] text-slate-900">
       <div className="min-h-screen flex bg-slate-50 text-slate-900">
-    
         <Sidebar />
 
-    
         <div className="flex-1 flex flex-col">
           <TopBar />
           <main className="flex-1 p-2 lg:p-2 overflow-y-auto">
@@ -26,7 +25,14 @@ function App() {
                   </div>
                 }
               />
-              
+              <Route
+                path="/payment"
+                element={
+                  <div className="min-h-screen bg-[#f6f8fb] p-2">
+                    <Payment />
+                  </div>
+                }
+              />
             </Routes>
           </main>
         </div>
