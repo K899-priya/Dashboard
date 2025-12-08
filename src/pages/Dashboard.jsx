@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Fa500Px } from "react-icons/fa";
 import { GiWallet, GiSettingsKnobs } from "react-icons/gi";
 import { RiExchangeDollarFill } from "react-icons/ri";
@@ -24,7 +25,7 @@ import {
   Legend,
 } from "recharts";
 
-const cashflowData = [
+const fallbackCashflowData = [
   { month: "Jan", income: 8000, expense: 4000 },
   { month: "Feb", income: 9000, expense: 5000 },
   { month: "Mar", income: 8500, expense: 4200 },
@@ -33,7 +34,7 @@ const cashflowData = [
   { month: "Jun", income: 11000, expense: 7000 },
 ];
 
-const expenseData = [
+const fallbackExpenseData = [
   { name: "Rent & Living", value: 2100, color: "#16a34a" },
   { name: "Investment", value: 525, color: "#4ade80" },
   { name: "Education", value: 420, color: "#86efac" },
@@ -41,7 +42,7 @@ const expenseData = [
   { name: "Entertainment", value: 175, color: "#bbf7d0" },
 ];
 
-const transactions = [
+const fallbackTransactions = [
   {
     name: "Electricity Bill",
     date: "2028-03-01",
@@ -97,7 +98,51 @@ function Dashboard() {
   const totalExpense = 43000;
   const totalSaving = 56000;
 
+  const [cashflowData, setCashflowData] = useState([]);
+  const [expenseData, setExpenseData] = useState([]);
+  const [transactions, setTransactions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+      
+        const [cashflowRes, expenseRes, txRes] = await Promise.all([
+          axios.get("https://example.com/api/cashflow"),  
+          axios.get("https://example.com/api/expenses"),   
+          axios.get("https://example.com/api/transactions") 
+        ]);
+
+        setCashflowData(cashflowRes.data || fallbackCashflowData);
+        setExpenseData(expenseRes.data || fallbackExpenseData);
+        setTransactions(txRes.data || fallbackTransactions);
+      } catch (err) {
+        console.error("Error fetching dashboard data:", err);
+        setError("Failed to load data from API. Showing fallback data.");
+        
+        setCashflowData(fallbackCashflowData);
+        setExpenseData(fallbackExpenseData);
+        setTransactions(fallbackTransactions);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const totalExpenseValue = expenseData.reduce((s, e) => s + e.value, 0);
+
+   if (loading) {
+    return (
+      <div className="flex-1 overflow-auto">
+        <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3 flex items-center justify-center">
+          <p className="text-sm text-slate-500">Loading dashboard data...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex-1 overflow-auto">
