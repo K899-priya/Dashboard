@@ -50,7 +50,7 @@ function Sidebar() {
                 ${
                   isActive
                     ? "bg-emerald-500 text-white shadow-sm"
-                    : "text-emerald-900/70 hover:bg-emerald-100"
+                    : "text-emerald-900/70 hover:bg-emerald-900"
                 }`
               }
             >

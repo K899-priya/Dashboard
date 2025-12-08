@@ -116,8 +116,8 @@ function Dashboard() {
         setCashflowData(cashflowRes.data || fallbackCashflowData);
         setExpenseData(expenseRes.data || fallbackExpenseData);
         setTransactions(txRes.data || fallbackTransactions);
-      } catch (err) {
-        console.error("Error fetching dashboard data:", err);
+      } catch (error) {
+        console.error("Error fetching dashboard data:", error);
         setError("Failed to load data from API. Showing fallback data.");
 
         setCashflowData(fallbackCashflowData);
@@ -147,7 +147,7 @@ function Dashboard() {
     <div className="flex-1 overflow-auto">
       <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
         {error && (
-          <div className="mb-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs px-3 py-2">
+          <div className="mb-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs px-2 py-1">
             {error}
           </div>
         )}

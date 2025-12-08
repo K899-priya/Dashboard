@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import Dashboard from "./pages/Dashboard";
+import Cards from "./pages/Cards";   
 import "./App.css";
 
 function App() {
@@ -16,15 +17,24 @@ function App() {
           <main className="flex-1 p-2 lg:p-2 overflow-y-auto">
             <Routes>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
               <Route
                 path="/dashboard"
                 element={
-                  <div className="min-h-screen bg-[#f6f8fb] p-2">
+                  <div className="min-h-screen bg-[#f6f8fb] p-1">
                     <Dashboard />
                   </div>
                 }
               />
-             
+
+              <Route
+                path="/cards"
+                element={
+                  <div className="min-h-screen bg-[#f6f8fb] p-1">
+                    <Cards />
+                  </div>
+                }
+              />
             </Routes>
           </main>
         </div>
