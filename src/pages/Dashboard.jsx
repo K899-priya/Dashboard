@@ -107,11 +107,10 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-      
         const [cashflowRes, expenseRes, txRes] = await Promise.all([
-          axios.get("https://example.com/api/cashflow"),  
-          axios.get("https://example.com/api/expenses"),   
-          axios.get("https://example.com/api/transactions") 
+          axios.get("http://localhost:3001/cashflow"),
+          axios.get("http://localhost:3001/expenses"),
+          axios.get("http://localhost:3001/transactions"),
         ]);
 
         setCashflowData(cashflowRes.data || fallbackCashflowData);
@@ -120,7 +119,7 @@ function Dashboard() {
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
         setError("Failed to load data from API. Showing fallback data.");
-        
+
         setCashflowData(fallbackCashflowData);
         setExpenseData(fallbackExpenseData);
         setTransactions(fallbackTransactions);
@@ -134,7 +133,7 @@ function Dashboard() {
 
   const totalExpenseValue = expenseData.reduce((s, e) => s + e.value, 0);
 
-   if (loading) {
+  if (loading) {
     return (
       <div className="flex-1 overflow-auto">
         <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3 flex items-center justify-center">
@@ -147,13 +146,12 @@ function Dashboard() {
   return (
     <div className="flex-1 overflow-auto">
       <div className="min-h-screen bg-[#f6f8fb] text-slate-900 px-5 py-3">
-
         {error && (
           <div className="mb-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs px-3 py-2">
             {error}
           </div>
         )}
-        
+
         <div className="max-w-full mx-auto grid grid-cols-[minmax(0,2.9fr)_minmax(0,1fr)] gap-2">
           <div className="space-y-4">
             <div className="grid grid-cols-[minmax(0,1fr)_repeat(3,1fr)] gap-2 items-start">

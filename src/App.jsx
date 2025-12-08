@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
-import Payment from "./pages/Payment";
 
 function App() {
   return (
@@ -25,14 +24,7 @@ function App() {
                   </div>
                 }
               />
-              <Route
-                path="/payment"
-                element={
-                  <div className="min-h-screen bg-[#f6f8fb] p-2">
-                    <Payment />
-                  </div>
-                }
-              />
+             
             </Routes>
           </main>
         </div>
