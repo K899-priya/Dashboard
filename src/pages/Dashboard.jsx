@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "/src/api.js";
 import { Fa500Px } from "react-icons/fa";
 import { GiWallet, GiSettingsKnobs } from "react-icons/gi";
 import { RiExchangeDollarFill } from "react-icons/ri";
@@ -108,16 +108,16 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const [cashflowRes, expenseRes, txRes] = await Promise.all([
-          axios.get("http://localhost:3001/cashflow"),
-          axios.get("http://localhost:3001/expenses"),
-          axios.get("http://localhost:3001/transactions"),
+          api.get("/cashflow"),
+          api.get("/expenses"),
+          api.get("/transactions"),
         ]);
 
         setCashflowData(cashflowRes.data || fallbackCashflowData);
         setExpenseData(expenseRes.data || fallbackExpenseData);
         setTransactions(txRes.data || fallbackTransactions);
-      } catch (error) {
-        console.error("Error fetching dashboard data:", error);
+      } catch (err) {
+        console.error("Error fetching dashboard data:", err);
         setError("Failed to load data from API. Showing fallback data.");
 
         setCashflowData(fallbackCashflowData);
